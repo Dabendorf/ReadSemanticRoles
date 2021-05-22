@@ -1,0 +1,205 @@
+# Example 1
+# text = Wolves can migrate considerable distances.
+1	Wolves	wolf	NOUN	NNS	Number=Plur	3	nsubj	3:nsubj	_	_	ARG0
+2	can	can	AUX	MD	VerbForm=Fin	3	aux	3:aux	_	_	ARGM-MOD
+3	migrate	migrate	VERB	VB	VerbForm=Inf	0	root	0:root	_	migrate.01	V
+4	considerable	considerable	ADJ	JJ	Degree=Pos	5	amod	5:amod	_	_	_
+5	distances	distance	NOUN	NNS	Number=Plur	3	obj	3:obj	SpaceAfter=No	_	ARGM-EXT
+6	.	.	PUNCT	.	_	3	punct	3:punct	_	_	_
+
+# Example 2
+# text = A Yellowstone wolf was found dead, hit by a car, on a Colorado highway last year, several hundred miles from home.
+1	A	a	DET	DT	Definite=Ind|PronType=Art	3	det	3:det	_	_	_	_	_
+2	Yellowstone	Yellowstone	PROPN	NNP	Number=Sing	3	compound	3:compound	_	_	_	_	_
+3	wolf	wolf	NOUN	NN	Number=Sing	5	nsubj:pass	5:nsubj:pass|6:nsubj:xsubj|8:nsubj:xsubj	_	_	_	_	ARG1
+4	was	be	AUX	VBD	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	5	aux:pass	5:aux:pass	_	be.03	V	_	_
+5	found	find	VERB	VBN	Tense=Past|VerbForm=Part|Voice=Pass	0	root	0:root	_	find.01	_	V	_
+6	dead	dead	ADJ	JJ	Degree=Pos	5	xcomp	5:xcomp	SpaceAfter=No	_	_	ARG1	_
+7	,	,	PUNCT	,	_	5	punct	5:punct	_	_	_	_	_
+8	hit	hit	VERB	VBN	Tense=Past|VerbForm=Part	6	conj	5:xcomp|6:conj	_	hit.01	_	ARGM-PRD	V
+9	by	by	ADP	IN	_	11	case	11:case	_	_	_	_	_
+10	a	a	DET	DT	Definite=Ind|PronType=Art	11	det	11:det	_	_	_	_	_
+11	car	car	NOUN	NN	Number=Sing	8	obl	8:obl:by	SpaceAfter=No	_	_	_	ARG2
+12	,	,	PUNCT	,	_	5	punct	5:punct	_	_	_	_	_
+13	on	on	ADP	IN	_	16	case	16:case	_	_	_	_	_
+14	a	a	DET	DT	Definite=Ind|PronType=Art	16	det	16:det	_	_	_	_	_
+15	Colorado	Colorado	PROPN	NNP	Number=Sing	16	compound	16:compound	_	_	_	_	_
+16	highway	highway	NOUN	NN	Number=Sing	5	obl	5:obl:on	_	_	_	ARGM-LOC	_
+17	last	last	ADJ	JJ	Degree=Pos	18	amod	18:amod	_	_	_	_	_
+18	year	year	NOUN	NN	Number=Sing	5	obl:tmod	5:obl:tmod	SpaceAfter=No	_	_	ARGM-TMP	_
+19	,	,	PUNCT	,	_	5	punct	5:punct	_	_	_	_	_
+20	several	several	ADJ	JJ	Degree=Pos	21	advmod	21:advmod	_	_	_	_	_
+21	hundred	hundred	NUM	CD	NumType=Card	22	nummod	22:nummod	_	_	_	_	_
+22	miles	mile	NOUN	NNS	Number=Plur	24	nmod:npmod	24:nmod:npmod	_	_	_	_	_
+23	from	from	ADP	IN	_	24	case	24:case	_	_	_	_	_
+24	home	home	NOUN	NN	Number=Sing	5	obl	5:obl:from	SpaceAfter=No	_	_	ARGM-LOC	_
+25	.	.	PUNCT	.	_	5	punct	5:punct	_	_	_	_	_
+
+# Example 3
+# text = Meanwhile, his reputation seems to be improving, although Bangs noted a "pretty interesting social dynamic."
+1	Meanwhile	meanwhile	ADV	RB	_	5	advmod	5:advmod	SpaceAfter=No	_	ARGM-TMP	_	_	_
+2	,	,	PUNCT	,	_	5	punct	5:punct	_	_	_	_	_	_
+3	his	he	PRON	PRP$	Gender=Masc|Number=Sing|Person=3|Poss=Yes|PronType=Prs	4	nmod:poss	4:nmod:poss	_	_	_	_	_	_
+4	reputation	reputation	NOUN	NN	Number=Sing	5	nsubj	5:nsubj|8:nsubj:xsubj	_	_	ARG1	_	ARG1	_
+5	seems	seem	VERB	VBZ	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	0:root	_	seem.01	V	_	_	_
+6	to	to	PART	TO	_	8	mark	8:mark	_	_	_	_	_	_
+7	be	be	AUX	VB	VerbForm=Inf	8	aux	8:aux	_	be.03	_	V	_	_
+8	improving	improve	VERB	VBG	Tense=Pres|VerbForm=Part	5	xcomp	5:xcomp	SpaceAfter=No	improve.01	C-ARG1	_	V	_
+9	,	,	PUNCT	,	_	8	punct	8:punct	_	_	_	_	_	_
+10	although	although	SCONJ	IN	_	12	mark	12:mark	_	_	_	_	_	_
+11	Bangs	Bangs	PROPN	NNP	Number=Sing	12	nsubj	12:nsubj	_	_	_	_	_	ARG0
+12	noted	note	VERB	VBD	Mood=Ind|Tense=Past|VerbForm=Fin	8	advcl	8:advcl:although	_	note.01	_	_	ARGM-ADV	V
+13	a	a	DET	DT	Definite=Ind|PronType=Art	18	det	18:det	_	_	_	_	_	_
+14	"	"	PUNCT	``	_	18	punct	18:punct	SpaceAfter=No	_	_	_	_	_
+15	pretty	pretty	ADV	RB	_	16	advmod	16:advmod	_	_	_	_	_	_
+16	interesting	interesting	ADJ	JJ	Degree=Pos	18	amod	18:amod	_	_	_	_	_	_
+17	social	social	ADJ	JJ	Degree=Pos	18	amod	18:amod	_	_	_	_	_	_
+18	dynamic	dynamic	NOUN	NN	Number=Sing	12	obj	12:obj	SpaceAfter=No	_	_	_	_	ARG1
+19	.	.	PUNCT	.	_	5	punct	5:punct	SpaceAfter=No	_	_	_	_	_
+20	"	"	PUNCT	''	_	5	punct	5:punct	_	_	_	_	_	_
+
+# Example 4
+# text = There are only about 850 wolves in the West, but there are an estimated 31,000 mountain lions.
+1	There	there	PRON	EX	_	2	expl	2:expl	_	_	_	_
+2	are	be	VERB	VBP	Mood=Ind|Tense=Pres|VerbForm=Fin	0	root	0:root	_	be.02	V	_
+3	only	only	ADV	RB	_	5	advmod	5:advmod	_	_	_	_
+4	about	about	ADV	RB	_	5	advmod	5:advmod	_	_	_	_
+5	850	850	NUM	CD	NumType=Card	6	nummod	6:nummod	_	_	_	_
+6	wolves	wolf	NOUN	NNS	Number=Plur	2	nsubj	2:nsubj	_	_	ARG1	_
+7	in	in	ADP	IN	_	9	case	9:case	_	_	_	_
+8	the	the	DET	DT	Definite=Def|PronType=Art	9	det	9:det	_	_	_	_
+9	West	west	ADJ	JJ	Degree=Pos	2	obl	2:obl:in	SpaceAfter=No	_	ARGM-LOC	_
+10	,	,	PUNCT	,	_	13	punct	13:punct	_	_	_	_
+11	but	but	CCONJ	CC	_	13	cc	13:cc	_	_	_	_
+12	there	there	PRON	EX	_	13	expl	13:expl	_	_	_	_
+13	are	be	VERB	VBP	Mood=Ind|Tense=Pres|VerbForm=Fin	2	conj	2:conj:but	_	be.02	_	V
+14	an	a	DET	DT	Definite=Ind|PronType=Art	18	det	18:det	_	_	_	_
+15	estimated	estimate	VERB	VBN	Tense=Past|VerbForm=Part	18	amod	18:amod	_	_	_	_
+16	31,000	31,000	NUM	CD	NumType=Card	18	nummod	18:nummod	_	_	_	_
+17	mountain	mountain	NOUN	NN	Number=Sing	18	compound	18:compound	_	_	_	_
+18	lions	lion	NOUN	NNS	Number=Plur	13	nsubj	13:nsubj	SpaceAfter=No	_	_	ARG1
+19	.	.	PUNCT	.	_	2	punct	2:punct	_	_	_	_
+
+# Example 5 (en_test)
+# text = What if Google expanded on its search-engine (and now e-mail) wares into a full-fledged operating system?
+1	What	what	PRON	WP	PronType=Int	0	root	0:root	_	_	_
+2	if	if	SCONJ	IN	_	4	mark	4:mark	_	_	_
+3	Google	Google	PROPN	NNP	Number=Sing	4	nsubj	4:nsubj	_	_	ARG0
+4	expanded	expand	VERB	VBD	Mood=Ind|Tense=Past|VerbForm=Fin	1	advcl	1:advcl:if	_	expand.01	V
+5	on	on	ADP	IN	_	15	case	15:case	_	_	_
+6	its	its	PRON	PRP$	Gender=Neut|Number=Sing|Person=3|Poss=Yes|PronType=Prs	15	nmod:poss	15:nmod:poss	_	_	_
+7	search	search	NOUN	NN	Number=Sing	9	compound	9:compound	SpaceAfter=No	_	_
+8	-	-	PUNCT	HYPH	_	9	punct	9:punct	SpaceAfter=No	_	_
+9	engine	engine	NOUN	NN	Number=Sing	15	compound	15:compound	_	_	_
+10	(	(	PUNCT	-LRB-	_	9	punct	9:punct	SpaceAfter=No	_	_
+11	and	and	CCONJ	CC	_	13	cc	13:cc	_	_	_
+12	now	now	ADV	RB	_	13	advmod	13:advmod	_	_	_
+13	e-mail	e-mail	NOUN	NN	Number=Sing	9	conj	9:conj:and|15:compound	SpaceAfter=No	_	_
+14	)	)	PUNCT	-RRB-	_	15	punct	15:punct	_	_	_
+15	wares	wares	NOUN	NNS	Number=Plur	4	obl	4:obl:on	_	_	ARG1
+16	into	into	ADP	IN	_	22	case	22:case	_	_	_
+17	a	a	DET	DT	Definite=Ind|PronType=Art	22	det	22:det	_	_	_
+18	full	full	ADV	RB	_	20	advmod	20:advmod	SpaceAfter=No	_	_
+19	-	-	PUNCT	HYPH	_	20	punct	20:punct	SpaceAfter=No	_	_
+20	fledged	fledged	ADJ	JJ	Degree=Pos	22	amod	22:amod	_	_	_
+21	operating	operating	NOUN	NN	Number=Sing	22	compound	22:compound	_	_	_
+22	system	system	NOUN	NN	Number=Sing	4	obl	4:obl:into	SpaceAfter=No	_	ARG4
+23	?	?	PUNCT	.	_	4	punct	4:punct	_	_	_# sent_id = weblog-blogspot.com_zentelligence_20040423000200_ENG_20040423_000200-0002
+
+# Example 6
+# text = I read an Article in Time magazine accusing the Iranian Government of being willing to start a nuclear war and I sympathise with the Article.
+1	I	I	PRON	PRP	Case=Nom|Number=Sing|Person=1|PronType=Prs	2	nsubj	2:nsubj	_	_	ARG0	_	_	_	_	_	_
+2	read	read	VERB	VBD	Mood=Ind|Tense=Past|VerbForm=Fin	0	root	0:root	_	read.01	V	_	_	_	_	_	_
+3	an	a	DET	DT	Definite=Ind|PronType=Art	4	det	4:det	_	_	_	_	_	_	_	_	_
+4	Article	article	NOUN	NN	Number=Sing	2	obj	2:obj	_	_	ARG1	ARG0	_	_	_	_	_
+5	in	in	ADP	IN	_	7	case	7:case	_	_	_	_	_	_	_	_	_
+6	Time	Time	PROPN	NNP	Number=Sing	7	compound	7:compound	_	_	_	_	_	_	_	_	_
+7	magazine	magazine	PROPN	NNP	Number=Sing	4	nmod	4:nmod:in	_	_	_	_	_	_	_	_	_
+8	accusing	accuse	VERB	VBG	VerbForm=Ger	4	acl	4:acl	_	accuse.01	_	V	_	_	_	_	_
+9	the	the	DET	DT	Definite=Def|PronType=Art	11	det	11:det	_	_	_	_	_	_	_	_	_
+10	Iranian	iranian	ADJ	JJ	Degree=Pos	11	amod	11:amod	_	_	_	_	_	_	_	_	_
+11	Government	government	NOUN	NN	Number=Sing	8	obj	8:obj	_	_	_	ARG1	_	ARG0	ARG0	_	_
+12	of	of	SCONJ	IN	_	14	mark	14:mark	_	_	_	_	_	_	_	_	_
+13	being	be	AUX	VBG	VerbForm=Ger	14	cop	14:cop	_	be.01	_	_	V	_	_	_	_
+14	willing	willing	ADJ	JJ	Degree=Pos	8	advcl	8:advcl:of	_	will.02	_	ARG2	ARG2	V	_	_	_
+15	to	to	PART	TO	_	16	mark	16:mark	_	_	_	_	_	_	_	_	_
+16	start	start	VERB	VB	VerbForm=Inf	14	xcomp	14:xcomp	_	start.01	_	_	_	ARG1	V	_	_
+17	a	a	DET	DT	Definite=Ind|PronType=Art	19	det	19:det	_	_	_	_	_	_	_	_	_
+18	nuclear	nuclear	ADJ	JJ	Degree=Pos	19	amod	19:amod	_	_	_	_	_	_	_	ARGM-ADJ	_
+19	war	war	NOUN	NN	Number=Sing	16	obj	16:obj	_	war.01	_	_	_	_	ARG1	V	_
+20	and	and	CCONJ	CC	_	22	cc	22:cc	_	_	_	_	_	_	_	_	_
+21	I	I	PRON	PRP	Case=Nom|Number=Sing|Person=1|PronType=Prs	22	nsubj	22:nsubj	_	_	_	_	_	_	_	_	ARG0
+22	sympathise	sympathise	VERB	VBP	Mood=Ind|Tense=Pres|VerbForm=Fin	2	conj	2:conj:and	_	sympathize.01	_	_	_	_	_	_	V
+23	with	with	ADP	IN	_	25	case	25:case	_	_	_	_	_	_	_	_	_
+24	the	the	DET	DT	Definite=Def|PronType=Art	25	det	25:det	_	_	_	_	_	_	_	_	_
+25	Article	article	NOUN	NN	Number=Sing	22	obl	22:obl:with	SpaceAfter=No	_	_	_	_	_	_	_	ARG1
+26	.	.	PUNCT	.	_	2	punct	2:punct	_	_	_	_	_	_	_	_	_
+
+# Example 7 sent_id test-s2/de
+1	Ich	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	7	nsubj	_	_	A0	_	_
+2	habe	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	7	aux	_	_	_	_	_
+3	dort	dort	ADV	ADV	_	7	advmod	_	_	AM-LOC	_	_
+4	2007	2007	NUM	CARD	NumType=Card	7	nmod	_	_	AM-TMP	_	_
+5	meinen	mein	PRON	PPOSAT	Case=Acc|Gender=Masc|Number=Sing|Number[psor]=Sing|Person=1|Poss=Yes|PronType=Prs	6	det:poss	_	_	_	_	_
+6	OWD	OWD	PROPN	NE	Case=Acc|Gender=Masc|Number=Sing	7	dobj	_	_	A1	_	_
+7	gemacht	machen	VERB	VVPP	VerbForm=Part	0	root	Y	do.02	_	_	_
+8	und	und	CONJ	KON	_	7	cc	_	_	_	_	_
+9	weil	weil	SCONJ	KOUS	_	14	mark	_	_	_	_	_
+10	mir	ich	PRON	PPER	Case=Dat|Number=Sing|Person=1|PronType=Prs	14	iobj	_	_	_	A0	_
+11	das	der	DET	ART	Case=Acc|Definite=Def|Gender=Neut|Number=Sing|PronType=Art	12	det	_	_	_	_	_
+12	Tauchen	Tauchen	NOUN	NN	Case=Acc|Gender=Neut|Number=Sing	14	dobj	_	_	_	A1	_
+13	so	so	ADV	ADV	_	14	advmod	_	_	_	AM-MNR	_
+14	gefiel	gefallen	VERB	VVFIN	VerbForm=Fin	28	advcl	Y	like.01	_	_	AM-CAU
+15	hab	haben	AUX	VAIMP	_	28	aux	_	_	_	_	_
+16	ich	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	28	nsubj	_	_	_	_	A0
+17	dort	dort	ADV	ADV	_	28	advmod	_	_	_	_	AM-LOC
+18	noch	noch	ADV	ADV	_	28	advmod	_	_	_	_	AM-TMP
+19-20	im	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+19	in	in	ADP	APPR	_	22	case	_	_	_	_	_
+20	dem	der	DET	ART	Case=Dat|Definite=Def|Gender=Masc,Neut|Number=Sing|PronType=Art	22	det	_	_	_	_	_
+21	selben	selb	ADJ	PDAT	Case=Dat|Degree=Pos|Gender=Masc,Neut|Number=Sing	22	amod	_	_	_	_	_
+22	Jahr	Jahr	NOUN	NN	Case=Dat|Gender=Masc,Neut|Number=Sing	28	nmod	_	_	_	_	AM-TMP
+23	den	der	DET	ART	Case=Acc|Definite=Def|Gender=Masc|Number=Sing|PronType=Art	24	det	_	_	_	_	_
+24	AOWD	AOWD	PROPN	NN	Case=Acc|Gender=Masc|Number=Sing	28	dobj	_	_	_	_	A1
+25	und	und	CONJ	KON	_	24	cc	_	_	_	_	_
+26	den	der	DET	ART	Definite=Def|PronType=Art	27	det	_	_	_	_	_
+27	Deep	Deep	PROPN	NE	_	24	conj	_	_	_	_	_
+28	drangehängt	dranhängen	VERB	VVPP	VerbForm=Part	7	conj	Y	attach.01	_	_	_
+29	.	.	PUNCT	$.	_	7	punct	_	_	_	_	_
+
+# Example 8 sent_id test-s3/de
+1	Ist	sein	VERB	VAFIN	Mood=Ind|Tense=Pres|VerbForm=Fin	5	cop	Y	be.01	_
+2	ja	ja	PART	ADV	_	5	advmod	_	_	AM-DIS
+3	wohl	wohl	ADV	ADV	_	5	advmod	_	_	AM-DIS
+4	ein	ein	DET	ART	Definite=Ind|PronType=Art	5	det	_	_	_
+5	Witz	Witz	NOUN	NN	_	0	root	_	_	A2
+6	.	.	PUNCT	$.	_	5	punct	_	_	_
+
+# Example 9 (fr-test)
+# text = Le royaume s'est amélioré, mais pas dans le sens voulu par l'UE.
+1	Le	le	DET	DET	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	_	_	_
+2	royaume	royaume	NOUN	NOUN	Gender=Masc|Number=Sing	5	nsubj	_	_	A0	_
+3	s'	se	PRON	PRON	Person=3|PronType=Prs	5	dobj	_	_	_	_
+4	est	être	AUX	AUX	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	aux	_	_	_	_
+5	amélioré	améliorer	VERB	VERB	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	0	root	Y	improve.01	_	_
+6	,	,	PUNCT	PUNCT	_	5	punct	_	_	_	_
+7	mais	mais	CONJ	CONJ	_	5	cc	_	_	_	_
+8	pas	pas	ADV	ADV	_	11	neg	_	_	_	_
+9	dans	dans	ADP	ADP	_	11	case	_	_	_	_
+10	le	le	DET	DET	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	11	det	_	_	_	_
+11	sens	sens	NOUN	NOUN	Gender=Masc|Number=Sing	5	conj	_	_	_	_
+12	voulu	vouloir	VERB	VERB	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	11	acl	Y	want.01	_	_
+13	par	par	ADP	ADP	_	15	case	_	_	_	_
+14	l'	le	DET	DET	Definite=Def|Number=Sing|PronType=Art	15	det	_	_	_	_
+15	UE	UE	PROPN	PROPN	_	12	nmod	_	_	_	_
+16	.	.	PUNCT	PUNCT	_	5	punct	_	_	_	_
+
+# Example 10 (fr-test)
+# text = C'est un sourire de Dieu.
+1	C'	ce	PRON	PRON	Number=Sing|Person=3|PronType=Dem	4	nsubj	_	_	A1
+2	est	être	VERB	VERB	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	4	cop	Y	be.01	_
+3	un	un	DET	DET	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	4	det	_	_	_
+4	sourire	sourire	NOUN	NOUN	Gender=Masc|Number=Sing	0	root	_	_	A2
+5	de	de	ADP	ADP	_	6	case	_	_	_
+6	Dieu	Dieu	PROPN	PROPN	_	4	nmod	_	_	_
+7	.	.	PUNCT	PUNCT	_	4	punct	_	_	_

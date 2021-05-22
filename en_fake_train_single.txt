@@ -1,0 +1,27 @@
+# Example 2
+# text = A Yellowstone wolf was found dead, hit by a car, on a Colorado highway last year, several hundred miles from home.
+1	A	a	DET	DT	Definite=Ind|PronType=Art	3	det	3:det	_	_	_	_	_
+2	Yellowstone	Yellowstone	PROPN	NNP	Number=Sing	3	compound	3:compound	_	_	_	_	_
+3	wolf	wolf	NOUN	NN	Number=Sing	5	nsubj:pass	5:nsubj:pass|6:nsubj:xsubj|8:nsubj:xsubj	_	_	_	_	ARG1
+4	was	be	AUX	VBD	Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	5	aux:pass	5:aux:pass	_	be.03	V	_	_
+5	found	find	VERB	VBN	Tense=Past|VerbForm=Part|Voice=Pass	0	root	0:root	_	find.01	_	V	_
+6	dead	dead	ADJ	JJ	Degree=Pos	5	xcomp	5:xcomp	SpaceAfter=No	_	_	ARG1	_
+7	,	,	PUNCT	,	_	5	punct	5:punct	_	_	_	_	_
+8	hit	hit	VERB	VBN	Tense=Past|VerbForm=Part	6	conj	5:xcomp|6:conj	_	hit.01	_	ARGM-PRD	V
+9	by	by	ADP	IN	_	11	case	11:case	_	_	_	_	_
+10	a	a	DET	DT	Definite=Ind|PronType=Art	11	det	11:det	_	_	_	_	_
+11	car	car	NOUN	NN	Number=Sing	8	obl	8:obl:by	SpaceAfter=No	_	_	_	ARG2
+12	,	,	PUNCT	,	_	5	punct	5:punct	_	_	_	_	_
+13	on	on	ADP	IN	_	16	case	16:case	_	_	_	_	_
+14	a	a	DET	DT	Definite=Ind|PronType=Art	16	det	16:det	_	_	_	_	_
+15	Colorado	Colorado	PROPN	NNP	Number=Sing	16	compound	16:compound	_	_	_	_	_
+16	highway	highway	NOUN	NN	Number=Sing	5	obl	5:obl:on	_	_	_	ARGM-LOC	_
+17	last	last	ADJ	JJ	Degree=Pos	18	amod	18:amod	_	_	_	_	_
+18	year	year	NOUN	NN	Number=Sing	5	obl:tmod	5:obl:tmod	SpaceAfter=No	_	_	ARGM-TMP	_
+19	,	,	PUNCT	,	_	5	punct	5:punct	_	_	_	_	_
+20	several	several	ADJ	JJ	Degree=Pos	21	advmod	21:advmod	_	_	_	_	_
+21	hundred	hundred	NUM	CD	NumType=Card	22	nummod	22:nummod	_	_	_	_	_
+22	miles	mile	NOUN	NNS	Number=Plur	24	nmod:npmod	24:nmod:npmod	_	_	_	_	_
+23	from	from	ADP	IN	_	24	case	24:case	_	_	_	_	_
+24	home	home	NOUN	NN	Number=Sing	5	obl	5:obl:from	SpaceAfter=No	_	_	ARGM-LOC	_
+25	.	.	PUNCT	.	_	5	punct	5:punct	_	_	_	_	_
