@@ -104,7 +104,7 @@
 20	fledged	fledged	ADJ	JJ	Degree=Pos	22	amod	22:amod	_	_	_
 21	operating	operating	NOUN	NN	Number=Sing	22	compound	22:compound	_	_	_
 22	system	system	NOUN	NN	Number=Sing	4	obl	4:obl:into	SpaceAfter=No	_	ARG4
-23	?	?	PUNCT	.	_	4	punct	4:punct	_	_	_# sent_id = weblog-blogspot.com_zentelligence_20040423000200_ENG_20040423_000200-0002
+23	?	?	PUNCT	.	_	4	punct	4:punct	_	_	_
 
 # Example 6
 # text = I read an Article in Time magazine accusing the Iranian Government of being willing to start a nuclear war and I sympathise with the Article.
@@ -136,6 +136,7 @@
 26	.	.	PUNCT	.	_	2	punct	2:punct	_	_	_	_	_	_	_	_	_
 
 # Example 7 sent_id test-s2/de
+# text = Ich habe dort 2007 meinen OWD gemacht und weil mir das Tauchen so gefiel hab ich dort noch in dem selben Jahr den AOWD und den Deep drangehängt.
 1	Ich	ich	PRON	PPER	Case=Nom|Number=Sing|Person=1|PronType=Prs	7	nsubj	_	_	A0	_	_
 2	habe	haben	AUX	VAFIN	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	7	aux	_	_	_	_	_
 3	dort	dort	ADV	ADV	_	7	advmod	_	_	AM-LOC	_	_
@@ -168,6 +169,7 @@
 29	.	.	PUNCT	$.	_	7	punct	_	_	_	_	_
 
 # Example 8 sent_id test-s3/de
+# text = Ist ja wohl ein Witz.
 1	Ist	sein	VERB	VAFIN	Mood=Ind|Tense=Pres|VerbForm=Fin	5	cop	Y	be.01	_
 2	ja	ja	PART	ADV	_	5	advmod	_	_	AM-DIS
 3	wohl	wohl	ADV	ADV	_	5	advmod	_	_	AM-DIS
