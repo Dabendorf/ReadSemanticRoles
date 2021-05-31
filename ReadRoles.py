@@ -1,8 +1,9 @@
 from typing import List
 
-file = open('/home/lukas/Downloads/Beispielgedöns/en_fake_train.txt', 'r')
+file = open('/home/lukas/Downloads/ReadSemanticRoles/en_fake_train.txt', 'r')
 
 frames = []
+frame_dict = {}
 verb_list = []
 verb_dict = {}
 tree_dict = {}
@@ -42,19 +43,21 @@ for line in file:
 
 for line in lines:
 	columns = line
-	# Frames finden
-	if columns[column_name_map_inv["frame"]] != "_":
-		verb_list.append(columns[column_name_map_inv["frame"]])
-	
-	# Tree dict Anlegen
-	# tree-id : [Liste abhängiger Wort-IDs]
+
+	column_frame = column_name_map_inv["frame"]
 	column_id_txt = columns[column_name_map_inv["id"]]
 	if column_id_txt.isnumeric():
 		column_id = int(column_id_txt)
 	else:
 		continue
 	column_tree_id = int(columns[column_name_map_inv["headid"]])
-	column_text = columns[column_name_map_inv["headid"]]
+	column_text = columns[column_name_map_inv["text"]]
+
+
+	# Frames finden
+	if columns[column_frame] != "_":
+		verb_list.append(columns[column_frame])
+		verb_dict[column_id] = columns[column_frame]
 
 	# Baut ein Dictionary aus tree-Abhängigkeiten
 	if column_tree_id in tree_dict:
@@ -66,7 +69,7 @@ for line in lines:
 	id_text_dict[column_id] = column_text
 
 	# Baut Dictionaries für Rollen (id : srl)
-	role_dict[column_id] = columns[int(column_name_map_inv["frame"])+1 : ]
+	role_dict[column_id] = columns[int(column_frame)+1 : ]
 
 	# [Frame: hit.01; Roles: [('a Yellowstone wolf', 'ARG1'), ('a car', 'ARG2')], ...]
 
@@ -86,25 +89,23 @@ for k, v in role_dict.items():
 					whole_string += (id_text_dict[word_id] + " ")
 				whole_string = whole_string.rstrip()
 
-				if verb_list[idx] in verb_dict:
-					verb_dict[verb_list[idx]].append((whole_string,(sem_rol)))
+				if verb_list[idx] in frame_dict:
+					frame_dict[verb_list[idx]].append((whole_string,(sem_rol)))
 				else:
-					verb_dict[verb_list[idx]] = [(whole_string,sem_rol)]
+					frame_dict[verb_list[idx]] = [(whole_string,sem_rol)]
 	
 
-print("tree dict")
-print(tree_dict)
-print("id-text dict")
-print(id_text_dict)
-print("id-roles dict")
-print(role_dict)
-print("Frames")
-print(verb_dict)
+print("Verb-dict:\t"+str(verb_dict)+"\n")
+print("tree dict:\t"+str(tree_dict)+"\n")
+print("id-text dict:\t"+str(id_text_dict)+"\n")
+print("id-roles dict:\t"+str(role_dict)+"\n")
+print("Frames:\t"+str(frame_dict)+"\n")
 
 # Frames finden
 # Zeilen finden, die semantische Rollen haben
 # Herausfinden, welche Wörter dazu gehören (dict für tree-Spalte anlegen)
-# Reihenfolge suchen
+# -> Tiefensuche mit Abbruchbedingung bei neuem Frame
+# Reihenfolge suchen (sortieren anhand der IDs)
 
 file.close()
 
