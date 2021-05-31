@@ -14,14 +14,14 @@ role_dict = {}
 # sub_root_id: ID of word which is root of that subtree
 # ignore_other_frames: Stops recursion when hiting other verb
 # -> unset value of a frame is the *direct* role of something 
-def dfs_tree(sub_root_id: Int, verb_dict, tree_dict, ignore_other_frames = True) -> [Int]:
+def dfs_tree(sub_root_id: int, verb_dict, tree_dict, ignore_other_frames = True) -> [int]:
 	list_of_word_ids = []
 
 	for sub_id in tree_dict[sub_root_id]:
-		if sub_id in verb_dict or not ignore_other_frames:
+		if sub_id not in verb_dict or not ignore_other_frames:
 			list_of_word_ids.append(sub_id)
 			if sub_id in tree_dict:
-				list_of_word_ids.append(dfs_tree(sub_root_id=sub_id, verb_dict=self.verb_dict, tree_dict=self.tree_dict, ignore_other_frames=self.ignore_other_frames))
+				list_of_word_ids.extend(dfs_tree(sub_root_id=sub_id, verb_dict=verb_dict, tree_dict=tree_dict, ignore_other_frames=ignore_other_frames))
 
 	return list_of_word_ids
 
@@ -97,23 +97,39 @@ for k, v in role_dict.items():
 				# sem_rol = String einer vorhandenen rolle
 				# idx = Index in v, oder: Index des Verbs zu welchem Rolle gehört
 				# Durchläuft jede Rolle, die kein Verb oder leer ist
-				print("ID Wort: "+str(k))
-				print("Semantische Rollen: "+str(v))
-				print("Semantische Rollen: "+sem_rol)
-				print("Verb-Index: "+str(idx))
+				#print("ID Wort: "+str(k))
+				#print("Semantische Rollen: "+str(v))
+				#print("Semantische Rollen: "+sem_rol)
+				#print("Verb-Index: "+str(idx))
 
-				klinger_liste = []
+				word_id_list = []
+				word_id_list.append(k)
 
 				if k in tree_dict:
 					sub_ids = tree_dict[k]
 					for sub_id in sub_ids:
 						if sub_id not in tree_dict:
-							klinger_liste.append(sub_id)
+							word_id_list.append(sub_id)
 						else:
 							if k in verb_dict:
-								klinger_liste.append(dfs_tree(sub_id, verb_dict, tree_dict, ignore_other_frames=False))
+								word_id_list.append(sub_id)
+								word_id_list.extend(dfs_tree(sub_id, verb_dict, tree_dict, ignore_other_frames=False))
 							elif sub_id not in verb_dict:
-								klinger_liste.append(dfs_tree(sub_id, verb_dict, tree_dict))
+								word_id_list.append(sub_id)
+								word_id_list.extend(dfs_tree(sub_id, verb_dict, tree_dict))
+
+				word_id_list = list(set(word_id_list))
+				word_id_list.sort()
+
+				whole_string = ""
+				for word_id in word_id_list:
+					whole_string += (id_text_dict[word_id] + " ")
+				whole_string = whole_string.rstrip()
+
+				if verb_list[idx] in frame_dict:
+					frame_dict[verb_list[idx]].append((whole_string, (sem_rol)))
+				else:
+					frame_dict[verb_list[idx]] = [(whole_string, sem_rol)]
 
 
 
