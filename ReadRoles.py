@@ -10,6 +10,21 @@ tree_dict = {}
 id_text_dict = {}
 role_dict = {}
 
+# Returns a list of ids of words which are dependent from another word
+# sub_root_id: ID of word which is root of that subtree
+# ignore_other_frames: Stops recursion when hiting other verb
+# -> unset value of a frame is the *direct* role of something 
+def dfs_tree(sub_root_id: Int, verb_dict, tree_dict, ignore_other_frames = True) -> [Int]:
+	list_of_word_ids = []
+
+	for sub_id in tree_dict[sub_root_id]:
+		if sub_id in verb_dict or not ignore_other_frames:
+			list_of_word_ids.append(sub_id)
+			if sub_id in tree_dict:
+				list_of_word_ids.append(dfs_tree(sub_root_id=sub_id, verb_dict=self.verb_dict, tree_dict=self.tree_dict, ignore_other_frames=self.ignore_other_frames))
+
+	return list_of_word_ids
+
 lines = []
 
 # Beispielnummer wählen (1-10)
@@ -73,8 +88,36 @@ for line in lines:
 
 	# [Frame: hit.01; Roles: [('a Yellowstone wolf', 'ARG1'), ('a car', 'ARG2')], ...]
 
-#	columns = line
+# Gehe alle vorhandenen semantischen Rollen durch
+# k = ID des Worts, v = semantische Rollen Liste
 for k, v in role_dict.items():
+	if any(x != "_" for x in v):
+		for idx, sem_rol in enumerate(v):
+			if sem_rol != "_" and sem_rol != "V":
+				# sem_rol = String einer vorhandenen rolle
+				# idx = Index in v, oder: Index des Verbs zu welchem Rolle gehört
+				# Durchläuft jede Rolle, die kein Verb oder leer ist
+				print("ID Wort: "+str(k))
+				print("Semantische Rollen: "+str(v))
+				print("Semantische Rollen: "+sem_rol)
+				print("Verb-Index: "+str(idx))
+
+				klinger_liste = []
+
+				if k in tree_dict:
+					sub_ids = tree_dict[k]
+					for sub_id in sub_ids:
+						if sub_id not in tree_dict:
+							klinger_liste.append(sub_id)
+						else:
+							if k in verb_dict:
+								klinger_liste.append(dfs_tree(sub_id, verb_dict, tree_dict, ignore_other_frames=False))
+							elif sub_id not in verb_dict:
+								klinger_liste.append(dfs_tree(sub_id, verb_dict, tree_dict))
+
+
+
+"""for k, v in role_dict.items():
 	if any(x != "_" for x in v):
 		for idx, sem_rol in enumerate(v):
 			if sem_rol != "_" and sem_rol != "V":
@@ -92,7 +135,7 @@ for k, v in role_dict.items():
 				if verb_list[idx] in frame_dict:
 					frame_dict[verb_list[idx]].append((whole_string,(sem_rol)))
 				else:
-					frame_dict[verb_list[idx]] = [(whole_string,sem_rol)]
+					frame_dict[verb_list[idx]] = [(whole_string,sem_rol)]"""
 	
 
 print("Verb-dict:\t"+str(verb_dict)+"\n")
